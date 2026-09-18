@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notas",
+  "info": {
+    "singularName": "nota",
+    "pluralName": "notas",
+    "displayName": "Nota"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "component",
+      "component": "nota.section",
+      "repeatable": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "notaId": {
+      "type": "uid"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "miniatura": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

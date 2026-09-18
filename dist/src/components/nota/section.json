@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_nota_sections",
+    "info": {
+        "displayName": "section"
+    },
+    "options": {},
+    "attributes": {
+        "text": {
+            "type": "blocks"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files"
+            ]
+        }
+    },
+    "config": {}
+}
