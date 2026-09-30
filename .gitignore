@@ -1,2 +1,11 @@
 node_modules/
 .env
+.env.*
+!.env.example
+
+.tmp/
+exports/
+*.tar.gz
+*.tar.gz.enc
+*.log
+.tmp/data.db
