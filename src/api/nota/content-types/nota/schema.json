@@ -19,6 +19,16 @@
     "title": {
       "type": "string"
     },
+    "subtitle": {
+      "type": "string"
+    },
+    "titleImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "notaId": {
       "type": "uid"
     },
