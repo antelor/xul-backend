@@ -38,6 +38,9 @@
         "images"
       ]
     },
+    "titleImageCredit": {
+      "type": "string"
+    },
     "advertisingImage": {
       "type": "media",
       "multiple": false,
