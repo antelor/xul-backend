@@ -22,6 +22,15 @@
     "subtitle": {
       "type": "string"
     },
+    "publishDate": {
+      "type": "date"
+    },
+    "columnName": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
     "titleImage": {
       "type": "media",
       "multiple": false,
