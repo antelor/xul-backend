@@ -29,6 +29,13 @@
         "images"
       ]
     },
+    "advertisingImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "notaId": {
       "type": "uid"
     },

@@ -6,6 +6,7 @@ export interface NotaSection extends Struct.ComponentSchema {
     displayName: 'section';
   };
   attributes: {
+    credit: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     text: Schema.Attribute.Blocks;
   };

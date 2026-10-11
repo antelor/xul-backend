@@ -491,6 +491,7 @@ export interface ApiNotaNota extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    advertisingImage: Schema.Attribute.Media<'images'>;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -504,7 +505,9 @@ export interface ApiNotaNota extends Struct.CollectionTypeSchema {
     notaId: Schema.Attribute.UID;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Component<'nota.section', true>;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    titleImage: Schema.Attribute.Media<'images'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

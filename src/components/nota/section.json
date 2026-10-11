@@ -15,6 +15,9 @@
         "images",
         "files"
       ]
+    },
+    "credit": {
+      "type": "string"
     }
   },
   "config": {}
