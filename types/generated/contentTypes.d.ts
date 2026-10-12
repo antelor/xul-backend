@@ -480,6 +480,36 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConvocatoriaConvocatoria
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'convocatorias';
+  info: {
+    displayName: 'Convocatorias';
+    pluralName: 'convocatorias';
+    singularName: 'convocatoria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::convocatoria.convocatoria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNotaNota extends Struct.CollectionTypeSchema {
   collectionName: 'notas';
   info: {
@@ -492,6 +522,8 @@ export interface ApiNotaNota extends Struct.CollectionTypeSchema {
   };
   attributes: {
     advertisingImage: Schema.Attribute.Media<'images'>;
+    author: Schema.Attribute.String;
+    columnName: Schema.Attribute.String;
     coverImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -503,11 +535,13 @@ export interface ApiNotaNota extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     miniatura: Schema.Attribute.Media<'images' | 'files'>;
     notaId: Schema.Attribute.UID;
+    publishDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.Component<'nota.section', true>;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     titleImage: Schema.Attribute.Media<'images'>;
+    titleImageCredit: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1026,6 +1060,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::convocatoria.convocatoria': ApiConvocatoriaConvocatoria;
       'api::nota.nota': ApiNotaNota;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
